@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    {% load static %}
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <head>
+        <meta charset="utf-8" />
+        <title>Login</title>
+
+        <link rel="icon" type="image/x-icon" href="{% static 'backend/uploads/default-images/favicon.png' %}" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content="lms, academy, eclass, elearning, education, online course,  learning management system, live class, live meeting, lms, online education, online teaching, udemy, quiz, school, skillshare" />
+        <meta name="author" content="Onest Tech" />
+        <meta
+            name="description"
+            content="Onest academy - Learning Management System web application. web-based responsive application that includes an online learning management system, as well as admin, instructor panel and student panel. This is a completely ready-to-use learning management sy"
+        />
+
+        <link rel="stylesheet" href="{% static 'backend/assets/css/bootstrap.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'backend/assets/css/icon-fonts.css' %}" />
+        <link rel="stylesheet" href="{% static 'backend/assets/css/apexcharts.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'backend/assets/css/plugin.css' %}" />
+
+        <link rel="stylesheet" href="{% static 'backend/assets/css/metisMenu.min.css' %}" />
+
+        <link rel="stylesheet" href="{% static 'backend/assets/css/style.css' %}" />
+    </head>
+    <body class="default-theme ltr" dir="ltr">
+        <main class="auth-page">
+            <section class="auth-container">
+                <div class="form-wrapper pv-80 ph-100 bg-white d-flex justify-content-center align-items-center flex-column">
+                    <div class="form-container d-flex justify-content-center align-items-start flex-column">
+                        <div class="mb-40">
+                            <h2 class="mb-8"><a href="">Django Boilerplate</a></h2>
+                        </div>
+
+                        <div class="form-heading mb-40">
+                            <h1 class="title mb-8">login</h1>
+                            <p class="subtitle mb-0">welcome back please login to your account</p>
+                        </div>
+
+                        <form action="" method="post" class="auth-form d-flex justify-content-center align-items-start flex-column">
+                            {% csrf_token %}
+                            <div class="input-field-group mb-20">
+                                <label for="username">email <sup class="fillable">*</sup></label><br />
+                                <div class="custom-input-field">
+                                    {{ form.email }}
+                                    <img src="{% static 'backend/assets/images/icons/username-cus.svg' %}" alt="img" />
+                                </div>
+                            </div>
+
+                            <div class="input-field-group mb-20">
+                                <label for="password">password <sup class="fillable">*</sup></label><br />
+                                <div class="custom-input-field password-input">
+                                    {{ form.password }}
+                                    <i class="lar la-eye"></i>
+                                    <img src="{% static 'backend/assets/images/icons/lock-cus.svg' %}" alt="img" />
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center w-100 mt-20">
+                                <div class="remember-me input-check-radio">
+                                    <div class="form-check d-flex align-items-center">
+                                        <input class="form-check-input" type="checkbox" name="rememberMe" id="rememberMe" />
+                                        <label for="rememberMe">remember me</label>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <a class="fogotPassword" href="forgot-password.html">forgot password</a>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="submit-btn pv-16 mt-32" value="Sign In">
+                                login
+                            </button>
+                        </form>
+
+                        <form action="" method="post" class="w-100 form d-flex justify-content-center align-items-start flex-column mt-20">
+                            {% csrf_token %}
+                            <input name="email" type="hidden" value="admin@gmail.com" />
+                            <input name="password" type="hidden" value="nothing1234" />
+                            <button type="submit" class="submit-button submit-button-only-border pv-14" value="Login">login as admin</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <script src="{% static 'backend/assets/js/theme.js' %}"></script>
+
+        <script src="{% static 'backend/assets/js/jquery-3.7.0.min.js' %}"></script>
+        <script src="{% static 'backend/assets/js/plugin.js' %}"></script>
+        <script src="{% static 'backend/assets/js/show-hide-password.js' %}"></script>
+    </body>
+</html>
